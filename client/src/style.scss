@@ -1,0 +1,136 @@
+$lightGreen: #b9e7e7;
+$equal20px: 1.25rem;
+$equal10px: 0.625rem;
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.app {
+    display: flex;
+    justify-content: center;
+    .container {
+        width: 1024px;
+
+        .link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        //Login & register
+        .auth {
+            align-items: center;
+            background-color: $lightGreen;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            h1 {
+                color: teal;
+                font-size: $equal20px;
+                margin: 0 0 $equal20px;
+            }
+
+            .authForm, 
+            .registerForm {
+                background-color: white;
+                border-radius: $equal10px;
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: $equal10px;
+                width: 200px;
+                input {
+                    border: 1px solid grey;
+                    border-radius: $equal10px;
+                    padding: $equal10px;
+                }
+
+                button {
+                    background-color: teal;
+                    border: 0.5px solid transparent;
+                    border-radius: $equal10px;
+                    color: white;
+                    cursor: pointer;
+                    padding: $equal10px;
+                }
+
+                p {
+                    color: red;
+                    font-size: 0.75rem;
+                    margin: 0;
+                    text-align: center;
+                }
+
+                span {
+                    font-size: 1rem;
+                    text-align: center;
+                }
+            }
+        }
+
+        //Navbar
+        .navbar{
+            .navbarContainer{
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                padding: $equal10px 0px;
+                .logo{
+                   img{
+                    width: 120px;
+                    // max-height: 100px;
+                    // max-width: 100px;
+                   }
+                }
+                .links{
+                    align-items: center;
+                    display: flex;
+                    gap: $equal10px;
+                    h6 {
+                        font-size: 1rem;
+                        font-weight: 300;
+                        margin: 0;
+                    }
+
+                    span {
+                        cursor: pointer;
+                    }
+
+                    .write {
+                        align-items: center;
+                        background-color: $lightGreen;
+                        border: 1px solid white;
+                        border-radius: 50%;
+                        display: flex;
+                        font-weight: 300;
+                        height: 50px;
+                        justify-content: center;
+                        width: 50px;
+
+                        &:hover {
+                            background-color: white;
+                            border: 1px solid teal;
+                            color: teal;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Footer
+
+        footer {
+            align-items: center;
+            background-color: $lightGreen;
+            display: flex;
+            justify-content: space-between;
+            margin: 100px 0 0 0;
+            padding: 20px;
+            img {
+                height: 50px;
+            }
+        }
+    }
+}
