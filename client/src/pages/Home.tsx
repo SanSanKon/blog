@@ -28,6 +28,12 @@ const Home = () => {
       title: "Post 3",
       desc: "Desc 3",
       img: Edit
+    },
+    {
+      id: 4,
+      title: "Post 4",
+      desc: "Desc 4",
+      img: Edit
     }
   ]
 
