@@ -1,16 +1,17 @@
 import React from 'react';
 import Edit from "../img/edit.png";
+import { Link } from 'react-router-dom';
 
-// interface IProps {
-//   id: number,
-//   title: string,
-//   desc: string,
-//   img: string
-// }
+interface IProps {
+  id: number,
+  title: string,
+  desc: string,
+  img: string
+}
 
 const Home = () => {
 
-  const posts = [
+  const posts: IProps[] = [
     {
       id: 1,
       title: "Post 1",
@@ -39,15 +40,22 @@ const Home = () => {
 
   return (
     <div className='home'>
-      {posts.map((post) => {
-        return (
-          <>
-            <p>{post.id}</p>
-            <p>{post.title}</p>
-            <p>{post.desc}</p>
-          </>
-        )
-      })}
+      <div className='posts'>
+        {posts.map((post) => (
+          <div className='post' key={post.id}>
+            <div className="img">
+              <img src={post.img} alt='' />
+            </div>
+            <div className="content">
+              <Link className='link' to={`/post/${post.id}`}>
+                <h1>{post.title}</h1>
+              </Link>
+              <p>{post.desc}</p>
+              <button>Read more</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

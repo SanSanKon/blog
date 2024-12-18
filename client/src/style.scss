@@ -1,6 +1,8 @@
 $lightGreen: #b9e7e7;
-$equal20px: 1.25rem;
 $equal10px: 0.625rem;
+$equal18px: 1.125rem;
+$equal20px: 1.25rem;
+$equal48px: 3rem;
 
 body {
     box-sizing: border-box;
@@ -130,6 +132,77 @@ body {
             padding: 20px;
             img {
                 height: 50px;
+            }
+        }
+
+        //Home page
+        .home {
+            .posts {
+                display: flex;
+                flex-direction: column;
+                gap: 100px;
+                //margin: 50px 0 0 0;
+
+                .post {
+                    display: flex;
+                    gap: 100px;
+
+                    &:nth-child(2n+1){
+                        flex-direction: row-reverse;
+                    }
+
+                    .img {
+                        flex: 1;
+                        position: relative;
+
+                        &::after{
+                            background-color: $lightGreen;
+                            content: "";
+                            height: 100%;
+                            left: -20px;
+                            position: absolute;
+                            top: 20px;
+                            width: 100%;
+                            z-index: -1;
+                        }
+
+                        img {
+                            max-height: 400px;
+                            object-fit: cover;
+                            width: 100%;
+                        }
+                    }
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        flex: 2;
+                        justify-content: space-between;
+
+                        h1 {
+                            font-size: $equal48px;
+                        }
+
+                        p {
+                            font-size: $equal18px;
+                        }
+
+                        button {
+                            background-color: white;
+                            border: 1px solid teal;
+                            color: teal;
+                            cursor: pointer;
+                            padding: $equal10px $equal20px;
+                            width: max-content;
+
+                            &:hover {
+                                background-color: $lightGreen;
+                                border: 1px solid white;
+                                color: black;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
