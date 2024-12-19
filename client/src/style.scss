@@ -1,8 +1,14 @@
 $lightGreen: #b9e7e7;
 $equal10px: 0.625rem;
+$equal12px: 0.75rem;
+$equal14px: 0.875rem;
 $equal18px: 1.125rem;
 $equal20px: 1.25rem;
+$equal25px: 1.5625rem;
+$equal30px: 1.875rem;
+$equal42px: 2.625rem;
 $equal48px: 3rem;
+$equal50px: 3.125rem;
 
 body {
     box-sizing: border-box;
@@ -12,6 +18,7 @@ body {
 .app {
     display: flex;
     justify-content: center;
+    
     .container {
         width: 1024px;
 
@@ -74,11 +81,13 @@ body {
 
         //Navbar
         .navbar{
+            
             .navbarContainer{
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
                 padding: $equal10px 0px;
+                
                 .logo{
                    img{
                     width: 120px;
@@ -86,10 +95,12 @@ body {
                     // max-width: 100px;
                    }
                 }
+                
                 .links{
                     align-items: center;
                     display: flex;
                     gap: $equal10px;
+                    
                     h6 {
                         font-size: 1rem;
                         font-weight: 300;
@@ -130,6 +141,7 @@ body {
             justify-content: space-between;
             margin: 100px 0 0 0;
             padding: 20px;
+            
             img {
                 height: 50px;
             }
@@ -137,6 +149,7 @@ body {
 
         //Home page
         .home {
+            
             .posts {
                 display: flex;
                 flex-direction: column;
@@ -181,10 +194,12 @@ body {
 
                         h1 {
                             font-size: $equal48px;
+                            margin: 0;
                         }
 
                         p {
                             font-size: $equal18px;
+                            margin: 0;
                         }
 
                         button {
@@ -201,6 +216,197 @@ body {
                                 color: black;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        //Single post page 
+
+        .single {
+            display: flex;
+            gap: $equal50px;
+
+            .content {
+                display: flex;
+                flex: 5;
+                flex-direction: column;
+                gap: $equal30px;
+
+                img {
+                    height: 300px;
+                    object-fit: cover;
+                    width: 100%;
+                }
+
+                .user {
+                    align-items: center;
+                    display: flex;
+                    font-size: $equal14px;
+                    gap: $equal10px;
+
+                    img {
+                        //border-radius: 50%;
+                        height: $equal50px;
+                        object-fit: cover;
+                        width: $equal50px;
+                    }
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .edit {
+                    display: flex;
+                    gap: 5px;
+
+                    img {
+                        cursor: pointer;
+                        height: $equal20px;
+                        width: $equal20px;
+                    }
+                }
+
+                h1 {
+                    color: #333;
+                    font-size: $equal42px;
+                    margin: 0;
+                }
+
+                p {
+                    line-height: $equal30px;
+                    margin: 0;
+                    text-align: justify;
+                }
+            }
+            .menu {
+                display: flex;
+                flex-direction: column;
+                flex: 2;
+                gap: $equal25px;
+
+                h1 {
+                    color: #555;
+                    font-size: $equal20px;
+                    margin: 0;
+                }
+
+                .post {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $equal10px;
+
+                    img {
+                        height: 200px;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+
+                    h2 {
+                        color: #555;
+                        margin: 0;
+                    }
+
+                    button {
+                        background-color: white;
+                        border: 1px solid teal;
+                        color: teal;
+                        cursor: pointer;
+                        padding: $equal10px $equal20px;
+                        width: max-content;
+
+                        &:hover {
+                            background-color: $lightGreen;
+                            border: 1px solid white;
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Write page
+
+        .add {
+            display: flex;
+            gap: $equal20px;
+            margin: $equal20px 0 0 0;
+
+            .content {
+                display: flex;
+                flex: 5;
+                flex-direction: column;
+                gap: $equal20px;
+
+                input {
+                    padding: $equal10px;
+                    border: 1px solid lightgray;
+                }
+
+                .editorContainer {
+                    border: 1px solid lightgray;
+                    height: 300px;
+                    overflow: scroll;
+
+                    .editor {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .menu {
+                display: flex;
+                flex: 2;
+                flex-direction: column;
+                gap: $equal20px;
+
+                .item {
+                    border: 1px solid lightgray;
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    font-size: $equal12px;
+                    color: #555;
+                    justify-content: space-between;
+                    padding: 10px;
+
+                    h1 {
+                        font-size: $equal20px;
+                        margin: 0;
+                    }
+
+                    .file {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+
+                    .buttonsInWriteComponent {
+                        display: flex;
+                        justify-content: space-between;
+
+                        :first-child {
+                            background-color: white;
+                            border: 1px solid teal;
+                            color: teal;
+                            cursor: pointer;
+                            padding: 3px 5px;
+                        }
+
+                        :last-child {
+                            background-color: teal;
+                            border: 1px solid teal;
+                            color: white;
+                            cursor: pointer;
+                            padding: 3px 5px;
+                        }
+                    }
+
+                    .categoryinWriteComponent {
+                        align-items: center;
+                        color: teal;
+                        display: flex;
+                        gap: 2px;
                     }
                 }
             }
